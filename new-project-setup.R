@@ -10,14 +10,10 @@ lapply(
     "ecmdata/derived-data/cleaned-rds-files",
     "ecmdata/raw-data",
     "photos-videos-screenshots",
-    "eda",
-    "figs",
-    paste0("figs/",
+    "figures",
+    paste0("figures/",
            c("pdf",
-             "png",
-             "svg",
-             "rds")),
-    "tables",
+             "png")),
     "src",
     "src/R",
     paste0(
@@ -25,14 +21,14 @@ lapply(
       c(
         "data-generation",
         "data-cleaning",
-        "fig-generation",
+        "figure-generation",
         "table-generation"
       )
     ),
     "misc-workflow",
     "debugging"
   ),
-  dir.create
+  FUN = dir.create
 )
 
 # create files
@@ -67,7 +63,7 @@ writeLines(
     paste0(
       'title: ',
       '\"Experiment notes for ',
-      commandArgs(trailingOnly = F)[[1]],
+      # commandArgs(trailingOnly = F)[[1]],
       'experiment\"'
     ),
     paste0('date: "begun ',
@@ -88,4 +84,4 @@ writeLines(
 # usethis::use_readme_rmd()
 # usethis::use_mit_license("Evan C. Mascitti")
 # usethis::use_git()
-# usethis::use_github(private = TRUE)
+#usethis::use_github(private = TRUE)
